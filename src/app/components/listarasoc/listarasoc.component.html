@@ -1,0 +1,47 @@
+<div class="content-wrapper">
+  <h1 class="text-center">Municipalidad Distrital de Chosica</h1>
+  <img src="../assets/img/logo-1.jpg" alt="" id="im">
+   <h2> Asociaciones</h2>
+  <table class="table table-hover">
+
+    <thead class="table-bg-primary">
+      <tr>
+        <th scope="col">N°</th>
+        <th scope="col"></th>
+        <th scope="col">Estado</th>
+        <th scope="col">Nombre asoc</th>
+        <th scope="col">Inf Adicional</th>
+        <th scope="col">N° Miembros</th>
+        <th scope="col">Fecha Constitucion</th>
+        <th scope="col">Tipo Asociacion</th>
+        <th scope="col">Casa Vecinal</th>
+        <th scope="col">Ubicacion</th>
+        <th scope="col">Eliminar</th>
+        
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let asociacion of asociaciones; let i=index">
+        <td scope="row">{{i+1}}</td>
+        <td>{{asociacion.ID_ASC}}</td>
+        <td>{{asociacion.ESTADO}}</td>
+        <td>{{asociacion.NOM_ASC}}</td>
+        <td>{{asociacion.IMF_ADICIONAL}}</td>
+        <td>{{asociacion.N_MIENBROS}}</td>
+        <td>{{asociacion.F_CONSTITUCION}}</td>
+        <td>{{asociacion.NOM_TIPO}}</td>
+        <td>{{asociacion.NOMBRE_CV}}</td>
+        <td>{{asociacion.UBICACION}}</td>
+        <td (click)="deleteAsociacion(asociacion.ID_ASOC)"> <button><i class="fas fa-trash-alt" aria-hidden="true" style="color: red;"></i>    </button></td>
+      </tr>
+    </tbody>
+
+    
+
+
+
+  </table>
+</div>
+

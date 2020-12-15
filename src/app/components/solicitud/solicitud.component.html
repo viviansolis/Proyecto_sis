@@ -1,0 +1,77 @@
+<div  class="content-wrapper">
+<h1 class="text-center">Registrar Asociacion</h1>
+<h5 class="text-center">Informacion ingresada para la asociacion</h5>
+<img src="../assets/img/logo-1.jpg" alt="" id="im">
+<div class="card col-md-10 " id="van">
+    <div class="card-header" >
+      Registro de Solicitud
+    </div>
+    <div class="card-body">
+      <div class="form-group col-md-3" id="caj">
+        <label for="exampleFormControlSelect1">Nombre de la Asociacion</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+          </div>
+          <input type="text"  class="form-control" [(ngModel)]="asociacionModel.nom_asc" name="nom_asc" #nom_as="ngModel">
+          <div class="input-group-append">
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group col-md-3">
+        <label for="exampleFormControlSelect1">Tipo Asociacion</label>
+        <select class="form-control" id="exampleFormControlSelect1" (change)="obtenerselect($event)" [(ngModel)]="asociacionModel.tipo_asociacion_id_asc_tipo" name="tipo_asociacion_id_asc_tipo" #tipo_asociacion_id_asc_tipo="ngModel">
+          <option >Selecionar Tipo</option>
+          <option *ngFor ="let tipo of lista" value="{{tipo.ID_ASC_TIPO}}" >{{tipo.NOM_TIPO}} </option>
+        </select>
+      </div><br>
+      <div class="form-group col-md-3" id="cajita">
+        <label for="exampleFormControlSelect1">Fecha de constitucion de la Asociacion</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+          </div>
+          <input type="text" class="form-control" [(ngModel)]="asociacionModel.f_constitucion" name="f_constitucion" #f_constitucion="ngModel">
+          <div class="input-group-append">
+          </div>
+        </div>
+      </div>
+      
+    
+      <div class="form-group col-md-3">
+        <label for="exampleFormControlSelect1">Numero de Miembros</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+          </div>
+          <input type="text" class="form-control" [(ngModel)]="asociacionModel.n_mienbros" name="n_mienbros" #n_mienbros="ngModel">
+          <div class="input-group-append">
+          </div>
+        </div>
+      </div><br>
+      <div class="form-group col-md-3" id="ubic">
+        <label for="exampleFormControlSelect1">Ubicacion</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+          </div>
+          <textarea class="form-control" rows="2" [(ngModel)]="asociacionModel.ubicacion" name="ubicacion" #ubicacion="ngModel"></textarea>
+         
+          <div class="input-group-append">
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-md-3">
+        <label for="exampleFormControlSelect1">Fines de la Asociacion</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+          </div>
+          <textarea class="form-control" rows="3" [(ngModel)]="asociacionModel.imf_adicional" name="imf_adicional" #imf_adicional="ngModel"></textarea >
+          <div class="input-group-append">
+          </div>
+        </div>
+      </div>
+      
+      <div id="but">
+        <button type="button" class="btn btn-success" (click)="create()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
